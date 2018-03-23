@@ -7,12 +7,9 @@ include_once('menu.php');
 <a href="incoming-form.php">Add an order</a>
 
     <?php
-      $servername = "192.168.50.148";
-      $username = "root";
-      $password = "VMware1!";
-      $dbname = "inventory";
 
-      $conn = new mysqli($servername, $username, $password, $dbname);
+      require "config.php";
+      $conn = new mysqli($host, $username, $password, $dbname);
       if ($conn->connect_error){
         die("Connection failed: " . $conn->connect_error);
       }
